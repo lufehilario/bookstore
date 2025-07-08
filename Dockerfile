@@ -1,5 +1,6 @@
 FROM python:3.13.3-slim AS python-base
 
+
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
@@ -17,6 +18,8 @@ FROM python-base AS builder-base
 RUN apt-get update && apt-get install --no-install-recommends -y curl build-essential
 
 RUN curl -sSL https://install.python-poetry.org | python
+
+RUN apt-get update && apt-get -y install libpq-dev gcc && pip install psycopg2
 
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
