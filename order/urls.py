@@ -14,3 +14,4 @@ router.register(r"order", viewsets.OrderViewSet, basename="order")
 urlpatterns = [
     path("", include(router.urls)),
 ]
+
