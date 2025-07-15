@@ -19,7 +19,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y curl build-esse
 
 RUN curl -sSL https://install.python-poetry.org | python
 
-RUN apt-get update && apt-get -y install libpq-dev gcc && pip install psycopg2
+#RUN apt-get update && apt-get -y install libpq-dev gcc && pip install psycopg2
+
+RUN apt-get update && apt-get install -y libpq-dev gcc && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir psycopg2
 
 WORKDIR $PYSETUP_PATH
 COPY poetry.lock pyproject.toml ./
