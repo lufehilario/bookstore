@@ -1,4 +1,5 @@
-[project]
+#[project]
+[tool.poetry]
 name = "bookstore"
 version = "0.1.0"
 description = ""
