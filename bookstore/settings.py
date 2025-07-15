@@ -172,6 +172,4 @@ INTERNAL_IPS = [
 
 #DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://lufehilario.pythonanywhere.com/']
-
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'lufehilario.pythonanywhere.com']
